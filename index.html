@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>swatches.js</title>
+	<style>
+		* { box-sizing: border-box; }
+
+		body{ font-family: system-ui; padding: 2rem; }
+
+		:root{
+			--bleu: hsl( 210,  67%,  50% );
+		}
+
+		/* Swatches */
+		.color{
+			width: max-content;
+			border: 1px solid #DDD;
+			padding: 1rem;
+			margin: 1rem 0
+		}
+		.swatch{
+			width: 2.5cm;
+			aspect-ratio: 1;
+		}
+		.label {
+			font-family: monospace;
+			margin: 1em 0;
+			padding: 1em 0;
+		}
+		.label           { border-top:    1px solid #DDD; }
+		.label:last-child{ border-bottom: 1px solid #DDD; }
+
+		.bold { font-weight: 700; }
+		.small { font-size: 0.8em; }
+
+		#Demo{
+			display: flex;
+			gap: 1rem;
+			flex-wrap: wrap;
+			& h1 { width: 100%;}
+		}
+
+	</style>
+
+	<script src="swatches.js" defer></script>
+
+</head>
+<body>
+
+	<section id="Demo">
+		<h1>Color</h1>
+
+		<div class="color">
+			<h3>Principal Bleu</h3>
+			<div style="background: var(--bleu)" class="swatch"></div>
+			<p class="label bold"   data-color-format="hsl"></p>
+			<p class="label"        data-color-format="hex"></p>
+			<p class="label"        data-color-format="rgb"></p>
+			<p class="label small"  data-color-format="lab"></p>
+			<p class="label small"  data-color-format="oklch"></p>
+			<p class="label small"  data-color-format="cmyk"></p>
+		</div>
+
+		<div class="color">
+			<h3>Highlight Bleu 80%</h3>
+			<div 
+				style="background: hsl( from var(--bleu) h s 80%)" 
+				class="swatch"></div>
+			<p class="label bold"   data-color-format="hsl"></p>
+			<p class="label"        data-color-format="hex"></p>
+			<p class="label"        data-color-format="rgb"></p>
+			<p class="label small"  data-color-format="lab"></p>
+			<p class="label small"  data-color-format="oklch"></p>
+			<p class="label small"  data-color-format="cmyk"></p>
+		</div>
+
+		<div class="color">
+			<h3>Shadow Bleu 30%</h3>
+			<div 
+				style="background: hsl( from var(--bleu) h 80% 30%)" 
+				class="swatch"></div>
+			<p class="label bold"   data-color-format="hsl"></p>
+			<p class="label"        data-color-format="hex"></p>
+			<p class="label"        data-color-format="rgb"></p>
+			<p class="label small"  data-color-format="lab"></p>
+			<p class="label small"  data-color-format="oklch"></p>
+			<p class="label small"  data-color-format="cmyk"></p>
+		</div>
+	</section>
+
+</body>
+</html>
+
